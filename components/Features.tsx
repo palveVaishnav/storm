@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Subtag, Subtitlesmall } from "./utils/Titletext";
+import { Animate } from "./animate/Universal";
 
 export default function Features() {
     return (
@@ -11,7 +12,11 @@ export default function Features() {
             </span>
             <div className="flex gap-8 w-full justify-center p-10">
                 {feature.map((feature, idx) => (
-                    <div key={idx} className="rounded-3xl bg-[--gray1] grid gap-4 p-8 min-h-max">
+                    <Animate key={idx} classname="rounded-3xl bg-[--gray1] grid gap-4 p-8 min-h-max"
+                        y={50}
+                        delay={.5 * idx}
+                        duration={1}
+                    >
                         <Image
                             alt="Feature Image"
                             src={feature.img}
@@ -26,7 +31,7 @@ export default function Features() {
                         <span className="font-semibold">
                             {feature.desc}
                         </span>
-                    </div>
+                    </Animate>
                 ))}
 
             </div>
