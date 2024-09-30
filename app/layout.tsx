@@ -30,7 +30,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <div className="fixed w-full top-0 z-10 backdrop-blur-md">
-          <Menu />
+          {/* <Menu /> */}
         </div>
         {children}
       </body>

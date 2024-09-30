@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Animate } from "./animate/Universal";
 
 export default function Truste() {
     return (
@@ -6,7 +7,11 @@ export default function Truste() {
             <span className="text-3xl text-center">
                 {"Trusted by global brands"}
             </span>
-            <div className="flex w-full overflow-x-auto gap-10 p-2">
+            <Animate
+                scale={0.1}
+                duration={0.5}
+                classname="flex w-full overflow-x-auto gap-10 p-2"
+            >
                 {Array.from({ length: 8 }, (_, index) => (
                     <div
                         key={index}
@@ -22,7 +27,7 @@ export default function Truste() {
                         {"Username"}
                     </div>
                 ))}
-            </div>
+            </Animate>
         </div>
     )
 }
