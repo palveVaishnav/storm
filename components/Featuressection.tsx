@@ -2,47 +2,50 @@
 import { ArrowRightIcon } from "@radix-ui/react-icons";
 import { Subtag, Subtitle, Subtitlesmall } from './utils/Titletext';
 import Image from "next/image";
+import { Animate } from "./animate/Universal";
 
 export default function FilteredCourses() {
     return (
         <div className="w-full p-40 grid place-content-center text-center gap-4">
-            <Subtag subtag="Introducing Storm" />
-            <Subtitle subtitle="Look beyond limits." />
-            <div className="border rounded-3xl grid grid-cols-2 p-10 gap-6 border-[--secondary]">
-                <div className="rounded-2xl bg-[#101010] col-span-2">
-                    <ul className="flex items-center gap-1 p-2 px-6 justify-between">
-                        {courses.map((course, index) => (
-                            <li className="rounded-xl py-4 px-20 hover:bg-white hover:text-black"
-                                key={index}
-                            >{course.name}</li>
-                        ))}
-                    </ul>
+            <Animate y={40} delay={1}>
+                <Subtag subtag="Introducing Storm" />
+                <Subtitle subtitle="Look beyond limits." />
+                <div className="border rounded-3xl grid grid-cols-2 p-10 gap-6 border-[--secondary]">
+                    <div className="rounded-2xl bg-[#101010] col-span-2">
+                        <ul className="flex items-center gap-1 p-2 px-6 justify-between">
+                            {courses.map((course, index) => (
+                                <li className="rounded-xl py-4 px-20 hover:bg-white hover:text-black"
+                                    key={index}
+                                >{course.name}</li>
+                            ))}
+                        </ul>
+                    </div>
+                    <div
+                        className="relative w-full h-full mt-auto rounded-3xl"
+                        style={{
+                            backgroundImage: `url('https://framerusercontent.com/images/83vvRuJ8KbDgCnL4nZ2Fic2ZKYg.svg')`,
+                            backgroundSize: 'cover', // Ensures the image covers the entire container
+                            backgroundPosition: 'center', // Centers the image within the container
+                            backgroundRepeat: 'no-repeat' // Prevents the image from repeating
+                        }}
+                    >
+                    </div>
+                    <div className="border border-[--secondary] col-span-1 h-[50vh] rounded-3xl p-8 flex flex-col justify-around text-left bg-gradient-to-tr from-[#101010] to-[#000000]">
+                        <span
+                            className="bg-[#101010] rounded-full h-fit w-fit px-4 py-1 text-sm"
+                        >{"fullstack"}</span>
+                        <span className="text-2xl font-semibold">
+                            {"Zero to 100 Cohort - Master MERN, DevOps, and System Design with Harkirat Singh"}
+                        </span>
+                        <p className="text-[--secondary]">
+                            {"Join the Zero to 100 Cohort to transform yourself from a beginner to an industry-ready developer. Learn the fundamentals and advanced concepts of the MERN stack, master DevOps practices, and deep dive into system design—all while building real-world projects. This intensive program, taught live by Harkirat Singh, equips you with hands-on experience and the skills needed to tackle modern software challenges."}</p>
+                        <span className="flex items-center text-[#3973e6]">
+                            {"Click Here"}
+                            <ArrowRightIcon />
+                        </span>
+                    </div>
                 </div>
-                <div
-                    className="relative w-full h-full mt-auto rounded-3xl"
-                    style={{
-                        backgroundImage: `url('https://framerusercontent.com/images/83vvRuJ8KbDgCnL4nZ2Fic2ZKYg.svg')`,
-                        backgroundSize: 'cover', // Ensures the image covers the entire container
-                        backgroundPosition: 'center', // Centers the image within the container
-                        backgroundRepeat: 'no-repeat' // Prevents the image from repeating
-                    }}
-                >
-                </div>
-                <div className="border border-[--secondary] col-span-1 h-[50vh] rounded-3xl p-8 flex flex-col justify-around text-left bg-gradient-to-tr from-[#101010] to-[#000000]">
-                    <span
-                        className="bg-[#101010] rounded-full h-fit w-fit px-4 py-1 text-sm"
-                    >{"fullstack"}</span>
-                    <span className="text-2xl font-semibold">
-                        {"Zero to 100 Cohort - Master MERN, DevOps, and System Design with Harkirat Singh"}
-                    </span>
-                    <p className="text-[--secondary]">
-                        {"Join the Zero to 100 Cohort to transform yourself from a beginner to an industry-ready developer. Learn the fundamentals and advanced concepts of the MERN stack, master DevOps practices, and deep dive into system design—all while building real-world projects. This intensive program, taught live by Harkirat Singh, equips you with hands-on experience and the skills needed to tackle modern software challenges."}</p>
-                    <span className="flex items-center text-[#3973e6]">
-                        {"Click Here"}
-                        <ArrowRightIcon />
-                    </span>
-                </div>
-            </div>
+            </Animate>
 
 
             <div className="grid grid-cols-2 mt-20 gap-4">
