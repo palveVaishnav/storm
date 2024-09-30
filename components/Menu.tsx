@@ -6,7 +6,7 @@ export default function Menu() {
         <motion.div
             initial={{ y: -60 }}
             whileInView={{ y: 0 }}
-            transition={{ mass: 10, type: 'spring', delay: 2 }}
+            transition={{ mass: 1, type: 'spring', delay: 2 }}
             className="w-full flex justify-between px-40 items-center p-2 text-xl"
         >
             <p className="text-2xl flex items-center font-bold">
